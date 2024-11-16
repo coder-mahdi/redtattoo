@@ -234,3 +234,50 @@ function readtattoo_team_cpt() {
 
 }
 add_action( 'init', 'readtattoo_team_cpt', 0 );
+
+// Register Custom Taxonomy for Team Type
+function readtattoo_team_type_taxonomy() {
+
+    $labels = array(
+        'name'                       => _x( 'Team Types', 'Taxonomy General Name', 'text_domain' ),
+        'singular_name'              => _x( 'Team Type', 'Taxonomy Singular Name', 'text_domain' ),
+        'menu_name'                  => __( 'Team Types', 'text_domain' ),
+        'all_items'                  => __( 'All Team Types', 'text_domain' ),
+        'parent_item'                => __( 'Parent Team Type', 'text_domain' ),
+        'parent_item_colon'          => __( 'Parent Team Type:', 'text_domain' ),
+        'new_item_name'              => __( 'New Team Type Name', 'text_domain' ),
+        'add_new_item'               => __( 'Add New Team Type', 'text_domain' ),
+        'edit_item'                  => __( 'Edit Team Type', 'text_domain' ),
+        'update_item'                => __( 'Update Team Type', 'text_domain' ),
+        'view_item'                  => __( 'View Team Type', 'text_domain' ),
+        'separate_items_with_commas' => __( 'Separate team types with commas', 'text_domain' ),
+        'add_or_remove_items'        => __( 'Add or remove team types', 'text_domain' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+        'popular_items'              => __( 'Popular Team Types', 'text_domain' ),
+        'search_items'               => __( 'Search Team Types', 'text_domain' ),
+        'not_found'                  => __( 'Not Found', 'text_domain' ),
+        'no_terms'                   => __( 'No team types', 'text_domain' ),
+        'items_list'                 => __( 'Team types list', 'text_domain' ),
+        'items_list_navigation'      => __( 'Team types list navigation', 'text_domain' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'rewrite'                    => array( 'slug' => 'team-type' ),
+    );
+    register_taxonomy( 'redtattoo-team-type', array( 'readtattoo-team' ), $args );
+
+    // Add default terms
+    if ( ! term_exists( 'tattoo', 'redtattoo-team-type' ) ) {
+        wp_insert_term( 'tattoo', 'redtattoo-team-type' );
+    }
+    if ( ! term_exists( 'piercing', 'redtattoo-team-type' ) ) {
+        wp_insert_term( 'piercing', 'redtattoo-team-type' );
+    }
+}
+add_action( 'init', 'readtattoo_team_type_taxonomy', 0 );
