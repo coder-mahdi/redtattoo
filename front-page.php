@@ -23,28 +23,58 @@ get_header();
         echo '<h1 class="page-title">' . get_the_title() . '</h1>';
 
         // Hero Image: ACF Repeater Field
-        if( have_rows('hero_image_repeater') ):
-            echo '<div class="hero-image-slider">';
-            while( have_rows('hero_image_repeater') ) : the_row();
-                $image = get_sub_field('image');
-                if( $image ):
-                    echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-                endif;
-            endwhile;
+	// Hero Image Group: ACF Repeater Fields
+// Hero Image Group: ACF Fields
+echo '<div class="hero-image-slider">';
+
+
+// Hero Image 1: ACF Sub Field
+if( have_rows('hero_image_1') ):
+    while( have_rows('hero_image_1') ) : the_row();
+        $image = get_sub_field('image');
+        if( $image && is_array($image) && isset($image['url']) ):
+            echo '<div class="hero-image hero-image-1">';
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . (isset($image['alt']) ? esc_attr($image['alt']) : '') . '" />';
             echo '</div>';
         endif;
+    endwhile;
+endif;
 
-        // Booking Button: ACF Radio Button
-        $booking_button = get_field('booking_button');
-        if( $booking_button ):
-            echo '<a href="#booking-section" class="booking-button">' . esc_html($booking_button) . '</a>';
+// Hero Image 2: ACF Sub Field
+if( have_rows('hero_image_2') ):
+    while( have_rows('hero_image_2') ) : the_row();
+        $image = get_sub_field('image');
+        if( $image && is_array($image) && isset($image['url']) ):
+            echo '<div class="hero-image hero-image-2">';
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . (isset($image['alt']) ? esc_attr($image['alt']) : '') . '" />';
+            echo '</div>';
         endif;
+    endwhile;
+endif;
 
-        // Button to Gallery: ACF Link Field
-        $gallery_link = get_field('gallery_button_link');
-        if( $gallery_link ):
-            echo '<a href="' . esc_url($gallery_link['url']) . '" class="gallery-button">' . esc_html($gallery_link['title']) . '</a>';
+// Hero Image 3: ACF Sub Field
+if( have_rows('hero_image_3') ):
+    while( have_rows('hero_image_3') ) : the_row();
+        $image = get_sub_field('image');
+        if( $image && is_array($image) && isset($image['url']) ):
+            echo '<div class="hero-image hero-image-3">';
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . (isset($image['alt']) ? esc_attr($image['alt']) : '') . '" />';
+            echo '</div>';
         endif;
+    endwhile;
+endif;
+
+echo '</div>';
+
+
+
+
+// Booking Button: Static
+echo '<a href="#booking-section" class="booking-button">Book Now</a>';
+
+// Button to Gallery: Static
+echo '<a href="/gallery" class="gallery-button">View Gallery</a>';
+
 
         // Schedule Box: ACF Group Field
         if( have_rows('schedule_box') ):
@@ -52,43 +82,91 @@ get_header();
             while( have_rows('schedule_box') ) : the_row();
                 $day = get_sub_field('day');
                 $time = get_sub_field('time');
+				$address = get_sub_field('address');
                 echo '<div class="schedule-item">';
                 echo '<span class="schedule-day">' . esc_html($day) . '</span>: ';
                 echo '<span class="schedule-time">' . esc_html($time) . '</span>';
+				echo '<span class="schedule-address">' . esc_html($address) . '</span>';
                 echo '</div>';
             endwhile;
             echo '</div>';
         endif;
 
-        // About Us: ACF Group Field
-        if( have_rows('about_us') ):
-            while( have_rows('about_us') ) : the_row();
-                $title = get_sub_field('title');
-                $image = get_sub_field('image');
-                $description = get_sub_field('description');
-                echo '<div class="about-us-section">';
-                if( $title ) echo '<h2>' . esc_html($title) . '</h2>';
-                if( $image ) echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-                if( $description ) echo '<p>' . esc_html($description) . '</p>';
-                echo '</div>';
-            endwhile;
-        endif;
+// About Us: ACF Group Field
+if( have_rows('about_us') ):
+    while( have_rows('about_us') ) : the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        $description = get_sub_field('description');
+
+        echo '<div class="about-us-section">';
+
+        // Display Title
+        if( !empty($title) ) {
+            echo '<h2>' . esc_html($title) . '</h2>';
+        }
+
+        // Display Image
+        if( !empty($image) && is_array($image) && isset($image['url']) ) {
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+        }
+
+        // Display Description
+        if( !empty($description) ) {
+            echo '<p>' . esc_html($description) . '</p>';
+        }
+
+        echo '</div>';
+    endwhile;
+endif;
+
+
 
         // Team Members: CPT and ACF Group Field
-        $team_members = new WP_Query(array('post_type' => 'team_member', 'posts_per_page' => -1));
-        if( $team_members->have_posts() ):
-            echo '<div class="team-members-section">';
-            while( $team_members->have_posts() ) : $team_members->the_post();
-                $title = get_the_title();
-                $image = get_field('team_member_image');
-                echo '<div class="team-member">';
-                if( $image ) echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-                if( $title ) echo '<h3>' . esc_html($title) . '</h3>';
-                echo '</div>';
-            endwhile;
-            echo '</div>';
-            wp_reset_postdata();
-        endif;
+		
+		// Query to get Team Members
+		$team_members = new WP_Query(array(
+			'post_type' => 'readtattoo-team', // Post type slug defined for team members
+			'posts_per_page' => -1, // Retrieve all team members
+		));
+		
+		// Check if there are any team members
+		if( $team_members->have_posts() ):
+			echo '<div class="team-members-section">';
+			
+			// Loop through the team members
+			while( $team_members->have_posts() ): $team_members->the_post();
+				
+				// Display the team member details
+				echo '<div class="team-member">';
+				
+				// Display the featured image if exists
+				if( has_post_thumbnail() ) {
+					echo '<div class="team-member-image">';
+					the_post_thumbnail('medium'); // Displays the featured image with medium size
+					echo '</div>';
+				}
+
+				echo '<h3>' . get_the_title() . '</h3>';
+				
+				// Display the content (editor content)
+				echo '<div class="team-member-content">';
+				the_content();
+				echo '</div>';
+				
+				echo '</div>';
+			endwhile;
+			
+			echo '</div>';
+		
+			// Reset Post Data
+			wp_reset_postdata();
+		else:
+			// If no team members are found
+			echo '<p>No team members found</p>';
+		endif;
+		
+		
 
         // Services: CPT with Custom Taxonomy and ACF
         $services = new WP_Query(array('post_type' => 'service', 'posts_per_page' => -1));
