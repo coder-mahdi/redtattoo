@@ -285,7 +285,6 @@ add_action( 'init', 'readtattoo_team_type_taxonomy', 0 );
 
 
 
-// Register Custom Post Type for Testimonials
 function readtattoo_testimonial_cpt() {
 
     $labels = array(
@@ -321,7 +320,7 @@ function readtattoo_testimonial_cpt() {
         'label'                 => __( 'Testimonial', 'text_domain' ),
         'description'           => __( 'Testimonials for Redtattoo theme', 'text_domain' ),
         'labels'                => $labels,
-        'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'supports'              => array('thumbnail' ),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -342,3 +341,6 @@ function readtattoo_testimonial_cpt() {
 
 }
 add_action( 'init', 'readtattoo_testimonial_cpt', 0 );
+
+
+
