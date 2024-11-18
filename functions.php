@@ -231,6 +231,14 @@ function readtattoo_team_cpt() {
         'rewrite'               => array( 'slug' => 'teams' ),
     );
     register_post_type( 'readtattoo-team', $args );
+	add_filter('enter_title_here', 'change_team_member_title_placeholder', 10, 2);
+    function change_team_member_title_placeholder($title, $post) {
+        if ($post->post_type == 'readtattoo-team') {
+            $title = 'Add Team Member Name';
+        }
+        return $title;
+    }
+
 
 }
 add_action( 'init', 'readtattoo_team_cpt', 0 );
