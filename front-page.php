@@ -262,13 +262,17 @@ endif;
 
 
        
+
+// Booking Services Section
+echo '<div id="services-section" class="services-section">';
+echo do_shortcode('[salon_booking_services styled=true]');
+echo '</div>';
+
         
 
-        // Booking Section: Plugin Booking Form
-        echo '<div id="booking-section" class="booking-section">';
-        // این بخش برای نمایش پلاگین بوکینگ هست که باید از وردپرس اضافه بشه
-        echo do_shortcode('[booking_form_shortcode]');
-        echo '</div>';
+
+ 
+
 
     endwhile; // End of the loop.
     ?>
