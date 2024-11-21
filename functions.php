@@ -328,7 +328,7 @@ function readtattoo_testimonial_cpt() {
         'label'                 => __( 'Testimonial', 'text_domain' ),
         'description'           => __( 'Testimonials for Redtattoo theme', 'text_domain' ),
         'labels'                => $labels,
-		'supports'              => array('thumbnail' ),
+		'supports'              => array('title', 'thumbnail'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,

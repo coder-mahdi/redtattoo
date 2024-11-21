@@ -198,45 +198,69 @@ endif;
             echo '</div>';
         endif;
 
-        // Testimonials: CPT
-        // Query برای گرفتن پست‌های مربوط به Testimonial
-        // $testimonials = new WP_Query(array(
-        //     'post_type' => 'testimonial', // نام CPT
-        //     'posts_per_page' => -1, // تمام توصیفات را بازیابی می‌کند
-        // ));
-        
-        // // چک کردن اینکه آیا توصیفاتی وجود دارد یا خیر
-        // if( $testimonials->have_posts() ):
-        //     echo '<div class="testimonials-section">';
-        //     echo '<h2>Testimonials</h2>'; // عنوان بخش توصیفات
-        
-        //     // حلقه برای نمایش توصیفات
-        //     while( $testimonials->have_posts() ): $testimonials->the_post();
-        //         echo '<div class="testimonial-item">';
-                
-        //         // نمایش عنوان (نام کاربر)
-        //         echo '<h3>' . get_the_title() . '</h3>';
-                
-        //         // نمایش محتوای توصیف (متن نظر)
-        //         echo '<div class="testimonial-content">' . get_the_content() . '</div>';
-        
-        //         // نمایش تصویر شاخص (در صورتی که موجود باشد)
-        //         if( has_post_thumbnail() ) {
-        //             echo '<div class="testimonial-image">';
-        //             the_post_thumbnail('thumbnail'); // تصویر شاخص با سایز کوچک
-        //             echo '</div>';
-        //         }
-        
-        //         echo '</div>'; // پایان div برای هر توصیف
-        //     endwhile;
-        
-        //     echo '</div>'; // پایان div برای بخش توصیفات
-        
-        //     // ریست کردن داده‌های پست
-        //     wp_reset_postdata();
-        // else:
-        //     echo '<p>No testimonials available.</p>'; // پیام در صورتی که توصیفاتی موجود نباشد
-        // endif;
+    
+    
+// Query to get Testimonials CPT posts
+$testimonials_query = new WP_Query(array(
+    'post_type'      => 'testimonial', // Post type slug defined for Testimonials
+    'posts_per_page' => -1,            // Retrieve all testimonials
+));
+
+// Check if there are any testimonials
+if ($testimonials_query->have_posts()) :
+    echo '<div class="testimonials-section">';
+
+    // Loop through the testimonials
+    while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
+
+        // Get ACF fields
+        $customer_name = get_field('customer_name');
+        $customer_image = get_field('customer_image');
+        $customer_profile_link = get_field('customer_profile_link');
+        $review_or_rating = get_field('review_or_rating');
+
+        echo '<div class="testimonial-item">';
+
+        // Display Customer Image
+        if ($customer_image) {
+            echo '<div class="customer-image">';
+            echo '<img src="' . esc_url($customer_image['url']) . '" alt="' . esc_attr($customer_image['alt']) . '">';
+            echo '</div>';
+        }
+
+        // Display Customer Name
+        if ($customer_name) {
+            echo '<h3 class="customer-name">' . esc_html($customer_name) . '</h3>';
+        }
+
+        if ($title) {
+            echo '<h3>' . get_the_title() . '</h3>';
+        }
+
+        // Display Review or Rating
+        if ($review_or_rating) {
+            echo '<div class="review">' . esc_html($review_or_rating) . '</div>';
+        }
+
+        // Display Profile Link
+        if ($customer_profile_link) {
+            echo '<a href="' . esc_url($customer_profile_link) . '" class="customer-profile-link" target="_blank">View Profile</a>';
+        }
+
+        echo '</div>';
+
+    endwhile;
+
+    echo '</div>';
+
+    // Reset Post Data
+    wp_reset_postdata();
+
+else :
+    echo '<p>No testimonials found</p>';
+endif;
+
+
        
         
 
