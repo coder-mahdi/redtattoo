@@ -6,25 +6,94 @@
     bottom: 0;
     position: fixed; 
     width: 100%;
-}
-
-.main-navigation {
-    display: flex; 
-    justify-content: flex-end; 
-    flex-grow: 1; 
-    
-    ul {
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
-        display: flex;
-    }
-
-    li {
-        margin-left: 1rem; 
-    }
+    justify-content: space-between;
+    z-index: 10; 
 }
 
 .menu-toggle {
+    color: white;
+    background-color: inherit;
+    border: none; 
+    cursor: pointer;
+
+    svg {
+        fill: currentColor; 
+    }
+
+    display: block; 
+    cursor: pointer;
+    border: none;
+    width: 4rem; 
+    height: 4rem;
+    position: fixed; 
+    bottom: 1rem; 
+    right: 1rem; 
+    margin-right: 1rem;
+    z-index: 15; 
+}
+
+.menu-header-container{
+    display: none;
+}
+
+
+.main-navigation.toggled .menu-header-container {
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem;
+    position: fixed; 
+    bottom: 5rem;
+    right: 0; 
+    padding-top: 1rem;
+    padding-right: 4rem;
+    background-color: black; 
+    border-radius: 5px; 
+    z-index: 14; 
+    ul{
+        list-style: none;
+    }
+    li{
+        margin-top: 1rem;
+
+    }
+}
+
+
+
+
+.icon-open {
+    display: block;
+}
+
+.main-navigation.toggled .icon-open {
     display: none; 
+}
+
+.icon-close {
+    display: none;
+}
+
+.main-navigation.toggled .icon-close {
+    display: block; 
+}
+
+
+.main-navigation.toggled .menu-toggle svg.icon-open {
+    transform: rotate(180deg); 
+}
+
+/* Small menu */
+@media screen and (min-width: 37.5em) {
+
+    .menu-toggle {
+        display: none; 
+    }
+
+    .main-navigation ul {
+        display: flex; 
+    }
+
+    .menu-header-container {
+        display: flex; 
+    }
 }

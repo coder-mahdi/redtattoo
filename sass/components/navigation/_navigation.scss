@@ -70,21 +70,21 @@
 // }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
+// .menu-toggle,
+// .main-navigation.toggled ul {
+// 	display: block;
+// }
 
-@media screen and (min-width: 37.5em) {
+// @media screen and (min-width: 37.5em) {
 
-	.menu-toggle {
-		display: none;
-	}
+// 	.menu-toggle {
+// 		display: none;
+// 	}
 
-	.main-navigation ul {
-		display: flex;
-	}
-}
+// 	.main-navigation ul {
+// 		display: flex;
+// 	}
+// }
 
 .comment-navigation,
 .posts-navigation,
