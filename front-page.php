@@ -99,7 +99,7 @@ if( have_rows('about_us') ):
         $image = get_sub_field('image');
         $description = get_sub_field('description');
 
-        echo '<div class="about-us-section">';
+        echo '<div id="about-us-section" class="about-us-section">';
 
         // Display Title
         if( !empty($title) ) {
@@ -132,7 +132,7 @@ endif;
 		
 		// Check if there are any team members
 		if( $team_members->have_posts() ):
-			echo '<div class="team-members-section">';
+			echo '<div id="readtattoo-team-section" class="team-members-section">';
 			
 			// Loop through the team members
 			while( $team_members->have_posts() ): $team_members->the_post();
@@ -261,17 +261,13 @@ else :
 endif;
 
 
-       
+     
 
 // Booking Services Section
 echo '<div id="services-section" class="services-section">';
 echo do_shortcode('[salon_booking_services styled=true]');
 echo '</div>';
 
-        
-
-
- 
 
 
     endwhile; // End of the loop.

@@ -182,12 +182,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_filter('use_block_editor_for_post', 'disable_gutenberg_for_front_page', 10, 2);
 
 function disable_gutenberg_for_front_page($use_block_editor, $post) {
-    // چک کنید که آیا پست فعلی همان صفحه‌ای است که شناسه 13 دارد (فرانت پیج)
+  
     if ($post->ID == 13) {
-        return false; // غیرفعال کردن ویرایشگر بلوک
+        return false; 
     }
 
-    return $use_block_editor; // اجازه به استفاده از ویرایشگر بلوک در سایر صفحات
+    return $use_block_editor; 
 }
 
 

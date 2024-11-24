@@ -1,0 +1,30 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 1rem;
+    bottom: 0;
+    position: fixed; 
+    width: 100%;
+}
+
+.main-navigation {
+    display: flex; 
+    justify-content: flex-end; 
+    flex-grow: 1; 
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        display: flex;
+    }
+
+    li {
+        margin-left: 1rem; 
+    }
+}
+
+.menu-toggle {
+    display: none; 
+}
