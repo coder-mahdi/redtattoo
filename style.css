@@ -771,6 +771,22 @@ textarea {
 	display: block;
 }
 
+.hero-image-slider {
+	margin-bottom: 2rem;
+	margin-top: -1rem;
+	display: flex;
+	flex-direction: column;
+	height: 40rem;
+	width: 83rem;
+	background-color: black;
+}
+.hero-image-slider img {
+	margin: 0.5rem;
+	height: 13rem;
+	width: 10rem;
+	border-radius: 1rem;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -941,6 +957,7 @@ textarea {
 /* Small menu */
 @media screen and (min-width: 37.5em) {
 	.site-header {
+		top: 20px;
 		display: flex;
 		align-items: flex-end;
 		bottom: auto;

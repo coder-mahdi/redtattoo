@@ -1,0 +1,16 @@
+.hero-image-slider{
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    width: 83rem;
+    background-color: black;
+
+    img{
+        margin: 0.5rem;
+        height: 13rem;
+        width: 10rem;
+        border-radius: 1rem;
+    }
+}

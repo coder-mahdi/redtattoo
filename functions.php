@@ -85,6 +85,14 @@ function redtattoo_theme_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+
+    // function redtattoo_add_image_sizes() {
+    //     add_image_size('hero-image', 275, 140, true); 
+
+    // }
+    // add_action('after_setup_theme', 'redtattoo_add_image_sizes');
+    
+
 	/**
 	 * Add support for core custom logo.
 	 *
