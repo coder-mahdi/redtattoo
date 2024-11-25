@@ -59,6 +59,10 @@
 }
 
 
+.booking-botton{
+    margin-right: 5rem;
+}
+
 
 
 .icon-open {
@@ -85,15 +89,38 @@
 /* Small menu */
 @media screen and (min-width: 37.5em) {
 
+    .site-header{
+        display: flex;
+        align-items: flex-end;
+        bottom: auto;
+    }
+
+    .main-navigation{
+        display: flex;
+        margin-right: 2rem;
+    }
+
     .menu-toggle {
         display: none; 
     }
 
     .main-navigation ul {
         display: flex; 
+        list-style: none;
     }
 
     .menu-header-container {
         display: flex; 
     }
+
+     .menu-header-container ul {
+        display: flex; 
+        gap: 1rem; 
+    }
+
+    .booking-botton {
+        margin-right: -2rem;
+    }
+
+ 
 }
