@@ -772,21 +772,51 @@ textarea {
 }
 
 .hero-image-slider {
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 	margin-top: -1rem;
 	display: flex;
 	flex-direction: column;
-	height: 40rem;
-	width: 83rem;
+	height: auto;
+	width: auto;
+	gap: 4rem;
 	background-color: black;
 }
-.hero-image-slider img {
-	margin: 0.5rem;
-	height: 13rem;
-	width: 10rem;
-	border-radius: 1rem;
+
+.hero-image {
+	display: flex;
+	gap: 3rem;
+	justify-content: center;
 }
 
+.hero-image-wrapper {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1rem;
+}
+.hero-image-wrapper img {
+	display: block;
+	height: 13rem;
+	width: 10rem;
+	transition: transform 0.3s ease;
+}
+.hero-image-wrapper .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+.hero-image-wrapper:hover img {
+	transform: scale(1.05);
+}
+.hero-image-wrapper:hover .overlay {
+	opacity: 0;
+}
+
+/* Animations for each hero image group */
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

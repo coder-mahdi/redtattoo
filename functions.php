@@ -186,6 +186,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
+function enqueue_hero_script() {
+    // ثبت فایل جاوااسکریپت کامپایل‌شده
+    wp_enqueue_script(
+        'hero-script', // هندل فایل
+        get_template_directory_uri() . '/js/hero.js', // مسیر فایل
+        array('jquery'), // وابستگی‌ها (اگر نیاز به jQuery دارید)
+        '1.0', // نسخه فایل
+        true // بارگذاری در انتهای صفحه (footer)
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_hero_script');
+
+
+
 
 add_filter('use_block_editor_for_post', 'disable_gutenberg_for_front_page', 10, 2);
 
