@@ -83,19 +83,26 @@ if( have_rows('about_us') ):
         echo '<div id="about-us-section" class="about-us-section">';
 
         // Display Title
+
+   
         if( !empty($title) ) {
+            
+            echo '<div class="about-us-wrapper">';
             echo '<h2>' . esc_html($title) . '</h2>';
+         // Display Description
+         if( !empty($description) ) {
+            echo '<p>' . esc_html($description) . '</p>';
         }
+
+        echo '</div>';
+    }
 
         // Display Image
         if( !empty($image) && is_array($image) && isset($image['url']) ) {
             echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
         }
 
-        // Display Description
-        if( !empty($description) ) {
-            echo '<p>' . esc_html($description) . '</p>';
-        }
+       
 
         echo '</div>';
     endwhile;
