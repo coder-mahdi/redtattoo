@@ -147,7 +147,16 @@
 .about-us-section{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     padding: 2rem;
+
+    img{
+        border-radius: 1rem;
+    }
+
+    @media screen and (min-width: 769px){
+        flex-wrap: nowrap;
+    }
 }
 
 .about-us-wrapper{
