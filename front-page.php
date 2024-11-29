@@ -50,7 +50,6 @@ echo '</div>';
 
 
 
-
 // Booking Button: Static
 echo '<a href="#booking-section" class="booking-button">Book Now</a>';
 
@@ -66,9 +65,9 @@ echo '<a href="/gallery" class="gallery-button">View Gallery</a>';
                 $time = get_sub_field('time');
 				$address = get_sub_field('address');
                 echo '<div class="schedule-item">';
-                echo '<span class="schedule-day">' . esc_html($day) . '</span>: ';
-                echo '<span class="schedule-time">' . esc_html($time) . '</span>';
-				echo '<span class="schedule-address">' . esc_html($address) . '</span>';
+                echo '<span class="schedule-day">' . esc_html($day) . '</span>: <br> ';
+                echo '<span class="schedule-time">' . esc_html($time) . '</span> <br>';
+				echo '<span class="schedule-address">' . esc_html($address) . '</span> <br>';
                 echo '</div>';
             endwhile;
             echo '</div>';
