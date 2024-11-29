@@ -154,6 +154,11 @@
         border-radius: 1rem;
     }
 
+    p{
+        text-align: justify;
+        margin-left: 2rem;
+    }
+
     @media screen and (min-width: 769px){
         flex-wrap: nowrap;
     }
@@ -161,4 +166,33 @@
 
 .about-us-wrapper{
     margin-right: 2rem;
+}
+
+
+//----------- team member section
+
+.team-members-section{
+    gap: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    justify-content: center;
+    grid-template-columns: minmax(270px, 270px);
+    display: grid;
+    justify-items: center;
+
+    @media screen and (min-width: 769px){
+        grid-template-columns: minmax(270px, 270px) minmax(270px, 270px);
+        grid-template-rows: auto minmax(300px, 350px);
+    }
+
+
+}
+
+.team-member{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            margin-top: -1rem;
+        }
 }

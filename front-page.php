@@ -82,11 +82,15 @@ if( have_rows('about_us') ):
 
         echo '<div id="about-us-section" class="about-us-section">';
 
-        // Display Title
+          // Display Image
+          if( !empty($image) && is_array($image) && isset($image['url']) ) {
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+        }
 
-   
+
+        // Display Title
         if( !empty($title) ) {
-            
+
             echo '<div class="about-us-wrapper">';
             echo '<h2>' . esc_html($title) . '</h2>';
          // Display Description
@@ -97,11 +101,7 @@ if( have_rows('about_us') ):
         echo '</div>';
     }
 
-        // Display Image
-        if( !empty($image) && is_array($image) && isset($image['url']) ) {
-            echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-        }
-
+      
        
 
         echo '</div>';
@@ -138,9 +138,9 @@ endif;
 				echo '<h3>' . get_the_title() . '</h3>';
 				
 				// Display the content (editor content)
-				echo '<div class="team-member-content">';
+				echo '<p class="team-member-content">';
 				the_content();
-				echo '</div>';
+				echo '</p>';
 				
 				echo '</div>';
 			endwhile;
