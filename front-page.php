@@ -19,76 +19,34 @@ get_header();
     while ( have_posts() ) :
         the_post();
 
-        // Display the title as a block, dynamically managed from WordPress backend.
         echo '<h1 class="page-title">' . get_the_title() . '</h1>';
 
-// Hero Image Group: ACF Fields
-echo '<div class="hero-image-slider">';
+        echo '<div class="hero-image-slider">';
 
-// Hero Image 1: ACF Gallery Field
-echo '<div class="hero-image hero-image-1">';
-$hero_images_1 = get_field('hero_image_1');
+// Hero Image: ACF Gallery Field
+$hero_image = get_field('hero_image'); 
+if ($hero_image) {
+    $image_count = count($hero_image);
+    
+    echo '<div class="hero-image">';
 
-if ($hero_images_1) {
-    foreach ($hero_images_1 as $image_id) {
+   
+    $max_images_to_display = $image_count * 5; 
+    for ($i = 0; $i < $max_images_to_display; $i++) {
+        $image_index = $i % $image_count; 
+        $image_id = $hero_image[$image_index]['ID'];
+
         echo '<div class="hero-image-wrapper">';
         echo wp_get_attachment_image($image_id, 'hero-image'); 
         echo '<div class="overlay"></div>'; 
         echo '</div>';
     }
 
-    foreach ($hero_images_1 as $image_id) {
-        echo '<div class="hero-image-wrapper">';
-        echo wp_get_attachment_image($image_id, 'hero-image'); 
-        echo '<div class="overlay"></div>'; 
-        echo '</div>';
-    }
-     }
- 
-echo '</div>';
-
-// Hero Image 2: ACF Gallery Field
-echo '<div class="hero-image hero-image-2">';
-$hero_images_2 = get_field('hero_image_2');
-if ($hero_images_2) {
-    foreach ($hero_images_2 as $image_id) {
-        echo '<div class="hero-image-wrapper">';
-        echo wp_get_attachment_image($image_id, 'hero-image'); 
-        echo '<div class="overlay"></div>'; 
-        echo '</div>';
-    }
-
-    foreach ($hero_images_2 as $image_id) {
-        echo '<div class="hero-image-wrapper">';
-        echo wp_get_attachment_image($image_id, 'hero-image'); 
-        echo '<div class="overlay"></div>'; 
-        echo '</div>';
-    }
+    echo '</div>';
 }
 echo '</div>';
 
-// Hero Image 3: ACF Gallery Field
-echo '<div class="hero-image hero-image-3">';
-$hero_images_3 = get_field('hero_image_3');
-if ($hero_images_3) {
-    foreach ($hero_images_3 as $image_id) {
 
-        echo '<div class="hero-image-wrapper">';
-        echo wp_get_attachment_image($image_id, 'hero-image'); 
-        echo '<div class="overlay"></div>'; 
-        echo '</div>';
-    }
-
-    foreach ($hero_images_3 as $image_id) {
-
-        echo '<div class="hero-image-wrapper">';
-        echo wp_get_attachment_image($image_id, 'hero-image'); 
-        echo '<div class="overlay"></div>'; 
-        echo '</div>';
-    }
-}
-echo '</div>';
-echo '</div>';
 
 
 

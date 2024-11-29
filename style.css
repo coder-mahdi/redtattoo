@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: redtattoo theme
 Theme URI: http://underscores.me/
@@ -771,21 +772,20 @@ textarea {
 	display: block;
 }
 
+/* تبلت: نمایش ۴ تصویر */
+/* دسکتاپ: نمایش همه تصاویر */
 .hero-image-slider {
-	margin-bottom: 4rem;
-	margin-top: -1rem;
+	position: relative;
 	display: flex;
-	flex-direction: column;
-	height: auto;
-	width: auto;
-	gap: 4rem;
+	flex-wrap: wrap;
+	justify-content: center;
 	background-color: black;
 }
 
 .hero-image {
-	display: flex;
-	gap: 3rem;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
 }
 
 .hero-image-wrapper {
@@ -814,6 +814,64 @@ textarea {
 }
 .hero-image-wrapper:hover .overlay {
 	opacity: 0;
+}
+
+@media screen and (max-width: 769px) {
+	.hero-image-wrapper:nth-child(n+7) {
+		display: none;
+	}
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.hero-image {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+	}
+	.hero-image-wrapper:nth-child(n+13) {
+		display: none;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.hero-image {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		gap: 1.5rem;
+	}
+	.hero-image-wrapper:nth-child(n+25) {
+		display: none;
+	}
+	.hero-image-wrapper img {
+		height: 15.5rem; /* ارتفاع بیشتر برای دسکتاپ */
+		width: 11rem; /* عرض بیشتر برای دسکتاپ */
+	}
+}
+.page-title,
+.booking-button {
+	position: absolute; /* موقعیت‌یابی مطلق نسبت به .hero-image-slider */
+	top: 50%; /* قرار گرفتن در وسط عمودی */
+	left: 50%; /* قرار گرفتن در وسط افقی */
+	transform: translate(-50%, -50%); /* برای اطمینان از دقیقاً در وسط قرار گرفتن */
+	z-index: 2; /* اطمینان از اینکه این عناصر بالای تصاویر هیرو قرار می‌گیرند */
+	color: white;
+	text-align: center;
+}
+
+.page-title {
+	font-size: 2.5rem; /* اندازه فونت قابل تنظیم بر اساس اندازه صفحه */
+	margin-top: -3rem;
+}
+
+.booking-button {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: red; /* می‌توانید رنگ دلخواه خود را تنظیم کنید */
+	color: white;
+	text-decoration: none;
+	margin-top: 1rem;
+	transition: background-color 0.3s ease;
+}
+.booking-button:hover {
+	background-color: darkred;
 }
 
 /* Animations for each hero image group */
