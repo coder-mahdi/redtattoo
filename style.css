@@ -900,7 +900,6 @@ textarea {
 }
 .about-us-section p {
 	text-align: justify;
-	margin-left: 2rem;
 }
 @media screen and (min-width: 769px) {
 	.about-us-section {
@@ -909,21 +908,27 @@ textarea {
 }
 
 .about-us-wrapper {
-	margin-right: 2rem;
+	margin-left: 2rem;
+}
+
+.team-member-wrrapper {
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .team-members-section {
 	gap: 3rem;
-	margin-top: 5rem;
 	margin-bottom: 10rem;
 	justify-content: center;
-	grid-template-columns: minmax(270px, 270px);
+	grid-template-columns: minmax(200px, 210px);
 	display: grid;
 	justify-items: center;
 }
 @media screen and (min-width: 769px) {
 	.team-members-section {
-		grid-template-columns: minmax(270px, 270px) minmax(270px, 270px);
+		grid-template-columns: minmax(200px, 210px) minmax(200px, 210px);
 		grid-template-rows: auto minmax(300px, 350px);
 	}
 }
@@ -935,6 +940,78 @@ textarea {
 }
 .team-member p {
 	margin-top: -1rem;
+}
+.team-member img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	border-radius: 10px;
+}
+.team-member .img-wrapper {
+	width: 210px;
+	height: 210px;
+	overflow: hidden;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+.testimonials-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+.testimonials-section img {
+	width: 20rem;
+	height: 15rem;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+.testimonial-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.testimonial-item.active {
+	visibility: visible;
+	opacity: 1;
+	position: relative;
+}
+
+.testimonial-dots {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	border-radius: 50%;
+	background-color: #ccc;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.dot.active {
+	background-color: #333;
+}
+
+.testimonials-section:focus-within .testimonial-item {
+	outline: none;
 }
 
 /*--------------------------------------------------------------

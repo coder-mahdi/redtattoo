@@ -200,6 +200,14 @@ add_action('wp_enqueue_scripts', 'enqueue_hero_script');
 
 
 
+function enqueue_testimonials_scripts() {
+
+    wp_enqueue_script('testimonials-script', get_template_directory_uri() . '/js/testimonials.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_testimonials_scripts');
+
+
+
 
 add_filter('use_block_editor_for_post', 'disable_gutenberg_for_front_page', 10, 2);
 

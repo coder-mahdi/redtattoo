@@ -83,10 +83,12 @@ if( have_rows('about_us') ):
         echo '<div id="about-us-section" class="about-us-section">';
 
           // Display Image
-          if( !empty($image) && is_array($image) && isset($image['url']) ) {
-            echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-        }
+  
 
+          if (!empty($image) && is_array($image) && isset($image['url'])) {
+              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+          }
+          
 
         // Display Title
         if( !empty($title) ) {
@@ -113,46 +115,56 @@ endif;
         // Team Members: CPT and ACF Group Field
 		
 		// Query to get Team Members
-		$team_members = new WP_Query(array(
-			'post_type' => 'readtattoo-team', // Post type slug defined for team members
-			'posts_per_page' => -1, // Retrieve all team members
-		));
-		
-		// Check if there are any team members
-		if( $team_members->have_posts() ):
-			echo '<div id="readtattoo-team-section" class="team-members-section">';
-			
-			// Loop through the team members
-			while( $team_members->have_posts() ): $team_members->the_post();
-				
-				// Display the team member details
-				echo '<div class="team-member">';
-				
-				// Display the featured image if exists
-				if( has_post_thumbnail() ) {
-					echo '<div class="team-member-image">';
-					the_post_thumbnail('medium'); // Displays the featured image with medium size
-					echo '</div>';
-				}
 
-				echo '<h3>' . get_the_title() . '</h3>';
-				
-				// Display the content (editor content)
-				echo '<p class="team-member-content">';
-				the_content();
-				echo '</p>';
-				
-				echo '</div>';
-			endwhile;
-			
-			echo '</div>';
-		
-			// Reset Post Data
-			wp_reset_postdata();
-		else:
-			// If no team members are found
-			echo '<p>No team members found</p>';
-		endif;
+$team_members = new WP_Query(array(
+    'post_type' => 'readtattoo-team', // Post type slug defined for team members
+    'posts_per_page' => -1, // Retrieve all team members
+));
+
+echo '<div class="team-member-wrrapper">'; // Opening wrapper
+
+echo '<h2 class="team-member-title">Our Artist</h2>'; // Section title
+
+// Check if there are any team members
+if ( $team_members->have_posts() ) :
+    echo '<div id="readtattoo-team-section" class="team-members-section">';
+
+    // Loop through the team members
+    while ( $team_members->have_posts() ) : $team_members->the_post();
+
+        // Display the team member details
+        echo '<div class="team-member">';
+
+        // Display the featured image if exists
+        if ( has_post_thumbnail() ) {
+            echo '<div class="img-wrapper">';
+            echo '<div class="team-member-image">';
+            the_post_thumbnail('medium'); // Displays the featured image with medium size
+            echo '</div>';
+            echo '</div>';
+        }
+
+        echo '<h3>' . get_the_title() . '</h3>';
+
+        // Display the content (editor content)
+        echo '<p class="team-member-content">';
+        the_content();
+        echo '</p>';
+
+        echo '</div>'; // Close team-member
+
+    endwhile;
+
+    echo '</div>'; // Close team-members-section
+
+else :
+    // If no team members are found
+    echo '<p>No team members found</p>';
+endif;
+
+echo '</div>'; // Close team-member-wrrapper
+
+
 		
 		
 
@@ -219,10 +231,6 @@ if ($testimonials_query->have_posts()) :
         // Display Customer Name
         if ($customer_name) {
             echo '<h3 class="customer-name">' . esc_html($customer_name) . '</h3>';
-        }
-
-        if ($title) {
-            echo '<h3>' . get_the_title() . '</h3>';
         }
 
         // Display Review or Rating
