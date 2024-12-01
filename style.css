@@ -395,6 +395,14 @@ textarea {
 	line-height: 1.5;
 }
 
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: "Montserrat", sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -772,12 +780,18 @@ textarea {
 	display: block;
 }
 
+.site-main {
+	background-color: black;
+}
+
 .hero-image-slider {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	background-color: black;
+	padding-top: 1rem;
+	margin-top: 5rem;
 }
 
 .hero-image {
@@ -1016,9 +1030,9 @@ textarea {
 }
 
 .booking-bar {
-	width: 100%; /* کشیدن نوار به تمام عرض صفحه */
-	background-color: red; /* رنگ پس‌زمینه */
-	padding: 10px 0; /* فاصله داخلی عمودی */
+	width: 100%;
+	background-color: #B22222;
+	padding: 10px 0;
 	text-align: center; /* متن داخل نوار در مرکز */
 	position: fixed; /* ثابت کردن نوار */
 	bottom: 0; /* نمایش در پایین صفحه */
@@ -1034,12 +1048,12 @@ textarea {
 	padding: 10px 20px; /* فاصله داخلی لینک */
 	border: 2px solid white; /* حاشیه سفید برای لینک */
 	border-radius: 5px; /* گوشه‌های گرد لینک */
-	transition: background-color 0.3s ease, color 0.3s ease; /* افکت تغییر رنگ نرم */
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .booking-link:hover {
-	background-color: white; /* تغییر رنگ پس‌زمینه در هاور */
-	color: red; /* تغییر رنگ متن در هاور */
+	background-color: white;
+	color: #B22222;
 }
 
 /*--------------------------------------------------------------
@@ -1186,7 +1200,16 @@ textarea {
 }
 
 .booking-botton {
+	border-radius: 5px;
+	padding: 10px 20px;
 	margin-right: 5rem;
+	background-color: #B22222;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.booking-botton:hover {
+	background-color: #CCCCCC;
+	color: #B22222;
 }
 
 .icon-open {
@@ -1220,6 +1243,7 @@ textarea {
 	.main-navigation {
 		display: flex;
 		margin-right: 2rem;
+		align-items: center;
 	}
 	.menu-toggle {
 		display: none;

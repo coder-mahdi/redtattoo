@@ -48,15 +48,6 @@ echo '</div>';
 
 
 
-
-
-// Booking Button: Static
-echo '<a href="#booking-section" class="booking-button">Book Now</a>';
-
-// Button to Gallery: Static
-echo '<a href="/gallery" class="gallery-button">View Gallery</a>';
-
-
         // Schedule Box: ACF Group Field
         if( have_rows('schedule_box') ):
             echo '<div class="schedule-box">';
@@ -202,7 +193,7 @@ echo '</div>'; // Close team-member-wrrapper
     // Booking Button: Static
 
     echo '<div class="booking-bar">';
-    echo '<a href="#booking-section" class="booking-link">Book Now</a>';
+    echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';
     echo '</div>';
 
 

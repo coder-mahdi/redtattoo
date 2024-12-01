@@ -187,16 +187,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 function enqueue_hero_script() {
-    // ثبت فایل جاوااسکریپت کامپایل‌شده
     wp_enqueue_script(
-        'hero-script', // هندل فایل
-        get_template_directory_uri() . '/js/hero.js', // مسیر فایل
-        array('jquery'), // وابستگی‌ها (اگر نیاز به jQuery دارید)
-        '1.0', // نسخه فایل
-        true // بارگذاری در انتهای صفحه (footer)
+        'hero-script', 
+        get_template_directory_uri() . '/js/hero.js', 
+        array('jquery'), 
+        '1.0', 
+        true 
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_hero_script');
+
+
+function redtattoo_theme_enqueue_fonts() {
+    wp_enqueue_style('Montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet', array(), null);
+
+    wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet', array(), null);
+}
+add_action('wp_enqueue_scripts', 'redtattoo_theme_enqueue_fonts');
 
 
 
