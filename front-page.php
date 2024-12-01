@@ -199,7 +199,14 @@ echo '</div>'; // Close team-member-wrrapper
         endif;
 
     
-    
+    // Booking Button: Static
+
+    echo '<div class="booking-bar">';
+    echo '<a href="#booking-section" class="booking-link">Book Now</a>';
+    echo '</div>';
+
+
+
 // Query to get Testimonials CPT posts
 $testimonials_query = new WP_Query(array(
     'post_type'      => 'testimonial', // Post type slug defined for Testimonials
@@ -255,14 +262,6 @@ if ($testimonials_query->have_posts()) :
 else :
     echo '<p>No testimonials found</p>';
 endif;
-
-
-     
-
-// Booking Services Section
-echo '<div id="services-section" class="services-section">';
-echo do_shortcode('[salon_booking_services styled=true]');
-echo '</div>';
 
 
 

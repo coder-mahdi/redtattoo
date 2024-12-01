@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: redtattoo theme
 Theme URI: http://underscores.me/
@@ -1014,6 +1015,33 @@ textarea {
 	outline: none;
 }
 
+.booking-bar {
+	width: 100%; /* کشیدن نوار به تمام عرض صفحه */
+	background-color: red; /* رنگ پس‌زمینه */
+	padding: 10px 0; /* فاصله داخلی عمودی */
+	text-align: center; /* متن داخل نوار در مرکز */
+	position: fixed; /* ثابت کردن نوار */
+	bottom: 0; /* نمایش در پایین صفحه */
+	left: 0; /* چسباندن به سمت چپ صفحه */
+	z-index: 9999; /* قرار گرفتن بالای سایر عناصر */
+}
+
+.booking-link {
+	color: white; /* رنگ متن لینک */
+	font-size: 18px; /* اندازه فونت */
+	font-weight: bold; /* ضخامت فونت */
+	text-decoration: none; /* حذف خط زیر لینک */
+	padding: 10px 20px; /* فاصله داخلی لینک */
+	border: 2px solid white; /* حاشیه سفید برای لینک */
+	border-radius: 5px; /* گوشه‌های گرد لینک */
+	transition: background-color 0.3s ease, color 0.3s ease; /* افکت تغییر رنگ نرم */
+}
+
+.booking-link:hover {
+	background-color: white; /* تغییر رنگ پس‌زمینه در هاور */
+	color: red; /* تغییر رنگ متن در هاور */
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1210,5 +1238,46 @@ textarea {
 	.booking-botton {
 		margin-right: -2rem;
 	}
+}
+.site-footer {
+	background-color: #333;
+	color: #fff;
+	padding: 40px 20px;
+}
+
+.site-footer h3 {
+	color: #ff6347;
+	margin-bottom: 10px;
+}
+
+.site-footer p,
+.site-footer a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.footer-social-media {
+	margin-top: 20px;
+}
+
+.footer-social-media a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+	color: #ccc;
+}
+
+.footer-social-media a:hover {
+	color: #ff6347;
+}
+
+.footer-social-media svg {
+	fill: currentColor;
 }
 /*# sourceMappingURL=sass/style.css.map */

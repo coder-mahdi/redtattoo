@@ -282,3 +282,32 @@ overflow: hidden;
 .testimonials-section:focus-within .testimonial-item {
     outline: none;
 }
+
+
+
+.booking-bar {
+    width: 100%; /* کشیدن نوار به تمام عرض صفحه */
+    background-color: red; /* رنگ پس‌زمینه */
+    padding: 10px 0; /* فاصله داخلی عمودی */
+    text-align: center; /* متن داخل نوار در مرکز */
+    position: fixed; /* ثابت کردن نوار */
+    bottom: 0; /* نمایش در پایین صفحه */
+    left: 0; /* چسباندن به سمت چپ صفحه */
+    z-index: 9999; /* قرار گرفتن بالای سایر عناصر */
+}
+
+.booking-link {
+    color: white; /* رنگ متن لینک */
+    font-size: 18px; /* اندازه فونت */
+    font-weight: bold; /* ضخامت فونت */
+    text-decoration: none; /* حذف خط زیر لینک */
+    padding: 10px 20px; /* فاصله داخلی لینک */
+    border: 2px solid white; /* حاشیه سفید برای لینک */
+    border-radius: 5px; /* گوشه‌های گرد لینک */
+    transition: background-color 0.3s ease, color 0.3s ease; /* افکت تغییر رنگ نرم */
+}
+
+.booking-link:hover {
+    background-color: white; /* تغییر رنگ پس‌زمینه در هاور */
+    color: red; /* تغییر رنگ متن در هاور */
+}
