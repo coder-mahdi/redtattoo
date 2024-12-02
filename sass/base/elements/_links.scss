@@ -1,5 +1,7 @@
 a {
 
+
+
     text-decoration: none; 
 	
 	color: white;
@@ -23,4 +25,9 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+
+a:hover{
+		color: #B22222;
 }
