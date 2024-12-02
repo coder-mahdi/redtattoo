@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: redtattoo theme
 Theme URI: http://underscores.me/
@@ -913,8 +914,7 @@ textarea {
 	align-items: center;
 	padding: 2rem;
 	margin-top: 5rem;
-	border-top-style: double;
-	border-top-color: #B22222;
+	position: relative;
 }
 .about-us-section img {
 	border-radius: 1rem;
@@ -928,6 +928,17 @@ textarea {
 		margin-left: 10rem;
 		margin-right: 7rem;
 	}
+}
+
+.about-us-section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
+	height: 0;
+	border-top: 0.1rem solid #B22222;
 }
 
 .about-us-wrapper {
@@ -986,6 +997,12 @@ textarea {
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
+	padding-top: 2rem;
+	border-top-style: solid;
+	border-top-color: #B22222;
+	border-top-width: 0.1rem;
+	width: 50%;
+	margin: 0 auto;
 }
 .testimonials-section img {
 	width: 20rem;
@@ -1318,5 +1335,49 @@ textarea {
 
 .footer-social-media svg {
 	fill: currentColor;
+}
+
+.site-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.site-footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* دو ستون مساوی */
+	gap: 20px; /* فاصله بین ستون‌ها */
+	padding: 20px;
+	background-color: #000; /* رنگ مشکی */
+	color: #fff; /* رنگ سفید برای متن */
+}
+
+.footer-about,
+.footer-contact {
+	display: flex;
+	flex-direction: column; /* چینش آیتم‌ها زیر هم */
+	align-items: flex-end; /* آیتم‌ها به سمت راست تراز می‌شوند */
+}
+
+.footer-contact,
+.footer-social-media {
+	align-items: flex-start; /* آیتم‌ها به سمت چپ تراز می‌شوند */
+}
+
+.footer-social-media {
+	display: flex;
+	flex-direction: column; /* چینش آیتم‌ها زیر هم */
+}
+
+.footer-social-media .social-link {
+	margin-top: 5px; /* فاصله بین لینک‌ها */
+}
+
+.site-info {
+	grid-column: span 2; /* این بخش کل عرض را بگیرد */
+	text-align: center; /* متن در مرکز قرار بگیرد */
+	margin-top: 20px;
+	font-size: 0.9em; /* کمی کوچک‌تر */
+	color: #888; /* رنگ خاکستری برای متن */
 }
 /*# sourceMappingURL=sass/style.css.map */

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dotsContainer = document.createElement("div");
     dotsContainer.className = "testimonial-dots";
     const testimonialsSection = document.querySelector(".testimonials-section");
-    let currentIndex = 0;
+    let currentIndex = 0; // شروع از اولین آیتم
     let interval;
 
     if (testimonials.length > 1) {
@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         testimonialsSection.appendChild(dotsContainer);
 
-        // Auto-play testimonials
+        // Start autoplay immediately
+        goToTestimonial(0); // نشان دادن اولین تستیمونیال بلافاصله
         interval = setInterval(nextTestimonial, 10000);
 
         // Keyboard navigation
@@ -36,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function goToTestimonial(index) {
-        testimonials[currentIndex].classList.remove("active");
-        dotsContainer.children[currentIndex].classList.remove("active");
+        testimonials[currentIndex]?.classList.remove("active");
+        dotsContainer.children[currentIndex]?.classList.remove("active");
         currentIndex = index;
-        testimonials[currentIndex].classList.add("active");
-        dotsContainer.children[currentIndex].classList.add("active");
+        testimonials[currentIndex]?.classList.add("active");
+        dotsContainer.children[currentIndex]?.classList.add("active");
     }
 
     function nextTestimonial() {

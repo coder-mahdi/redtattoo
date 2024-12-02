@@ -156,8 +156,7 @@
     align-items: center;
     padding: 2rem;
     margin-top: 5rem;
-    border-top-style: double;
-    border-top-color:#B22222;
+    position: relative;
 
 
     img{
@@ -177,6 +176,18 @@
 
 }
 
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%;
+    height: 0; 
+    border-top: 0.1rem solid #B22222; 
+}
+
 .about-us-wrapper{
     margin-left: 2rem;
     
@@ -191,6 +202,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 
 .team-members-section{
     gap: 3rem;
@@ -244,6 +256,12 @@ align-items: center;
 justify-content: center;
 position: relative;
 overflow: hidden;
+padding-top: 2rem;
+border-top-style: solid;
+border-top-color: #B22222;
+border-top-width: 0.1rem;
+width: 50%; 
+margin: 0 auto; 
 
     img{
         width: 20rem;
