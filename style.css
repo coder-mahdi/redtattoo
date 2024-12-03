@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: redtattoo theme
 Theme URI: http://underscores.me/
@@ -998,17 +997,24 @@ textarea {
 	position: relative;
 	overflow: hidden;
 	padding-top: 2rem;
-	border-top-style: solid;
-	border-top-color: #B22222;
-	border-top-width: 0.1rem;
-	width: 50%;
-	margin: 0 auto;
+	padding-bottom: 2rem;
 }
 .testimonials-section img {
 	width: 20rem;
 	height: 15rem;
 	-o-object-fit: cover;
 	   object-fit: cover;
+}
+
+.testimonials-section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
+	height: 0;
+	border-top: 0.1rem solid #B22222;
 }
 
 .testimonial-item {
@@ -1299,10 +1305,22 @@ textarea {
 	background-color: #333;
 	color: #fff;
 	padding: 40px 20px;
+	position: relative;
+}
+
+.site-footer:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
+	height: 0;
+	border-top: 0.1rem solid #B22222;
 }
 
 .site-footer h3 {
-	color: #ff6347;
+	color: #B22222;
 	margin-bottom: 10px;
 }
 
@@ -1330,7 +1348,7 @@ textarea {
 }
 
 .footer-social-media a:hover {
-	color: #ff6347;
+	color: #B22222;
 }
 
 .footer-social-media svg {
@@ -1345,39 +1363,84 @@ textarea {
 
 .site-footer {
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* دو ستون مساوی */
-	gap: 20px; /* فاصله بین ستون‌ها */
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
 	padding: 20px;
-	background-color: #000; /* رنگ مشکی */
-	color: #fff; /* رنگ سفید برای متن */
+	background-color: #000;
+	color: #fff;
 }
 
 .footer-about,
 .footer-contact {
 	display: flex;
-	flex-direction: column; /* چینش آیتم‌ها زیر هم */
-	align-items: flex-end; /* آیتم‌ها به سمت راست تراز می‌شوند */
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 .footer-contact,
 .footer-social-media {
-	align-items: flex-start; /* آیتم‌ها به سمت چپ تراز می‌شوند */
+	align-items: flex-start;
 }
 
 .footer-social-media {
 	display: flex;
-	flex-direction: column; /* چینش آیتم‌ها زیر هم */
-}
-
-.footer-social-media .social-link {
-	margin-top: 5px; /* فاصله بین لینک‌ها */
+	flex-direction: column;
 }
 
 .site-info {
-	grid-column: span 2; /* این بخش کل عرض را بگیرد */
-	text-align: center; /* متن در مرکز قرار بگیرد */
-	margin-top: 20px;
-	font-size: 0.9em; /* کمی کوچک‌تر */
-	color: #888; /* رنگ خاکستری برای متن */
+	grid-column: span 2;
+	text-align: center;
+	margin-bottom: 5rem;
+	font-size: 0.6em;
+	color: #888;
+}
+@media screen and (min-width: 769px) {
+	.site-info {
+		margin-bottom: 1rem;
+	}
+}
+
+.entry-title {
+	display: none;
+}
+
+.entry-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+
+h2.text.salon-step-title {
+	display: none;
+}
+
+.page-content, .entry-content, .entry-summary {
+	margin: -0.5em -4px -51px;
+}
+
+.sln-bootstrap .container-fluid .sln-salon--m .fadedIn {
+	background-color: black !important;
+}
+
+.sln-bootstrap.container-fluid.sln-salon--m__content {
+	background-color: black;
+}
+
+.sln-bootstrap .container-fluid .sln-salon--m {
+	background-color: black;
+}
+
+.sln-attendant-list.sln-list.sln-list--600 {
+	background-color: black;
+}
+
+#sln-salon .container-fluid, #sln-salon--admin .container-fluid, .sln-salon-bs-wrap .container-fluid, .sln-calendar--wrapper .container-fluid {
+	/* background-color: black; */
+	/* margin-right: auto; */
+	/* margin-left: auto; */
+	padding-left: 0;
+	padding-right: 0;
 }
 /*# sourceMappingURL=sass/style.css.map */

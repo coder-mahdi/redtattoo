@@ -1,0 +1,45 @@
+.entry-title{
+    display: none;
+}
+
+.entry-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+ 
+}
+
+h2.text.salon-step-title {
+    display: none;
+}
+
+.page-content, .entry-content, .entry-summary {
+    margin: -0.5em -4px -51px;
+}
+
+.sln-bootstrap .container-fluid .sln-salon--m .fadedIn{
+    background-color: black !important;
+}
+
+.sln-bootstrap.container-fluid.sln-salon--m__content {
+    background-color: black;
+}
+.sln-bootstrap .container-fluid .sln-salon--m {
+    background-color: black;
+}
+
+.sln-attendant-list.sln-list.sln-list--600 {
+    background-color: black;
+}
+
+
+#sln-salon .container-fluid, #sln-salon--admin .container-fluid, .sln-salon-bs-wrap .container-fluid, .sln-calendar--wrapper .container-fluid {
+    /* background-color: black; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    padding-left: 0;
+    padding-right: 0;
+}

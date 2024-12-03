@@ -214,6 +214,18 @@ function enqueue_testimonials_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_testimonials_scripts');
 
 
+function enqueue_booking_script() {
+    // افزودن فایل booking.js
+    wp_enqueue_script(
+        'booking-script', // نام یکتا برای اسکریپت
+        get_template_directory_uri() . '/js/booking.js', // مسیر فایل booking.js
+        array(), // وابستگی‌ها (مثلاً jQuery، در اینجا خالی است)
+        null, // نسخه (null برای نسخه‌بندی خودکار)
+        true // بارگذاری در footer
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_booking_script');
+
 
 
 add_filter('use_block_editor_for_post', 'disable_gutenberg_for_front_page', 10, 2);

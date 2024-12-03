@@ -2,10 +2,22 @@
     background-color: #333;
     color: #fff;
     padding: 40px 20px;
+    position: relative;
+}
+
+.site-footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%;
+    height: 0; 
+    border-top: 0.1rem solid #B22222; 
 }
 
 .site-footer h3 {
-    color: #ff6347;
+    color: #B22222;
     margin-bottom: 10px;
 }
 
@@ -33,7 +45,7 @@
 }
 
 .footer-social-media a:hover {
-    color: #ff6347;
+    color: #B22222;
 }
 
 .footer-social-media svg {
@@ -52,38 +64,39 @@
 
  .site-footer {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* دو ستون مساوی */
-    gap: 20px; /* فاصله بین ستون‌ها */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
     padding: 20px;
-    background-color: #000; /* رنگ مشکی */
-    color: #fff; /* رنگ سفید برای متن */
+    background-color: #000; 
+    color: #fff; 
 }
 
 .footer-about,
 .footer-contact {
     display: flex;
-    flex-direction: column; /* چینش آیتم‌ها زیر هم */
-    align-items: flex-end; /* آیتم‌ها به سمت راست تراز می‌شوند */
+    flex-direction: column; 
+    align-items: flex-end; 
 }
 
 .footer-contact,
 .footer-social-media {
-    align-items: flex-start; /* آیتم‌ها به سمت چپ تراز می‌شوند */
+    align-items: flex-start; 
 }
 
 .footer-social-media {
     display: flex;
-    flex-direction: column; /* چینش آیتم‌ها زیر هم */
+    flex-direction: column;
 }
 
-.footer-social-media .social-link {
-    margin-top: 5px; /* فاصله بین لینک‌ها */
-}
+
 
 .site-info {
-    grid-column: span 2; /* این بخش کل عرض را بگیرد */
-    text-align: center; /* متن در مرکز قرار بگیرد */
-    margin-top: 20px;
-    font-size: 0.9em; /* کمی کوچک‌تر */
-    color: #888; /* رنگ خاکستری برای متن */
+    grid-column: span 2; 
+    text-align: center; 
+    margin-bottom: 5rem;
+    font-size: 0.6em; 
+    color: #888; 
+    @media screen and (min-width: 769px){
+        margin-bottom: 1rem;
+    }
 }
