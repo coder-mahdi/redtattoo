@@ -1,0 +1,139 @@
+.entry-title{
+    display: none;
+}
+
+.entry-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+ 
+}
+
+h2.text.salon-step-title {
+    display: none;
+}
+
+.page-content, .entry-content, .entry-summary {
+    margin: -0.5em -4px -51px;
+}
+
+.sln-bootstrap .container-fluid .sln-salon--m .fadedIn{
+    background-color: black !important;
+}
+
+.sln-bootstrap.container-fluid.sln-salon--m__content {
+    background-color: black;
+}
+.sln-bootstrap .container-fluid .sln-salon--m {
+    background-color: black;
+}
+
+.sln-attendant-list.sln-list.sln-list--600 {
+    background-color: black;
+}
+
+
+#sln-salon .container-fluid, #sln-salon--admin .container-fluid, .sln-salon-bs-wrap .container-fluid, .sln-calendar--wrapper .container-fluid {
+    /* background-color: black; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#sln-salon #sln-salon__content{
+    background-color: #B22222 !important;
+    padding: 0.1rem !important;
+}
+
+#sln-salon h2.sln-salon-title{
+    color: white;
+}
+.sln-list .sln-list__item:not(.sln-list--400) .sln-list__item__content .sln-list__item__name{
+    color: white !important;
+}
+
+.sln-btn button,
+.btn--borderonly
+ {
+    border-radius: 5px  !important;
+    padding: 10px 20px  !important;
+    margin-right: 5rem  !important;
+    background-color: #B22222  !important;
+    transition: background-color 0.3s ease color 0.3s ease  !important;
+    a {
+        text-decoration: none  !important;
+        color: white  !important;
+    }
+}
+
+
+
+.sln-list, #sln-salon .sln-list{
+    margin: 2rem !important;
+}
+
+
+#sln-salon #sln_date .sln-salon-bs-wrap .table-condensed, .sln_timepicker, .started, .is_scrollable{
+
+    background-color: rgb(223 131 131) !important;
+
+}
+
+#sln-salon #sln_timepicker_viewdate{
+    color: white;
+}
+
+.sln-progbar__text{
+    color: white !important;
+}
+
+#sln-salon .sln-progbar__wrapper{
+    
+    margin-right: 3rem !important;
+        margin-left: 3rem !important;
+}
+
+.editable{
+    margin-left:3rem !important ;
+}
+
+.row .sln-box__bottombar .sln-box__bottombar--attendant{
+    margin-right: 3rem !important;
+
+}
+
+.prev, .next, .num,
+.numbg, .day .active, .day .disabled {
+    color: black !important;
+}
+
+#sln-salon #sln_timepicker_viewdate{
+    color: white !important;
+}
+
+.datetimepicker-minutes{
+    background-color: rgb(223 131 131) !important;
+}
+
+@media only screen and (max-width: 599px) {
+    #sln-salon .datetimepicker.sln-datetimepicker,
+    .sln-box__bottombar, #sln-salon .sln-box__bottombar,
+    #sln-salon .datetimepicker.sln-datetimepicker{
+        background-color: unset !important;
+
+    }
+}
+
+.sln-data-desc,
+.sln-thankyou__content .sln-list,
+#sln-salon .sln-summary .sln-data-desc .label{
+    color: white !important;
+}
+
+.sln-thankyou__content .sln-list{
+    color: white !important;
+}

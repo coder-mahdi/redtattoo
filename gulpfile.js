@@ -24,7 +24,7 @@ gulp.task('css', function () {
 
 // Watch all scss files
 gulp.task('watch', function () {
-	gulp.watch( './**/*.scss', gulp.series('css') );
+	gulp.watch('./**/*.scss', gulp.series('css')); 
 });
 
 // Default task that runs when running 'npx gulp'

@@ -85,6 +85,14 @@ function redtattoo_theme_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+
+    // function redtattoo_add_image_sizes() {
+    //     add_image_size('hero-image', 275, 140, true); 
+
+    // }
+    // add_action('after_setup_theme', 'redtattoo_add_image_sizes');
+    
+
 	/**
 	 * Add support for core custom logo.
 	 *
@@ -174,6 +182,61 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+
+function enqueue_hero_script() {
+    wp_enqueue_script(
+        'hero-script', 
+        get_template_directory_uri() . '/js/hero.js', 
+        array('jquery'), 
+        '1.0', 
+        true 
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_hero_script');
+
+
+function redtattoo_theme_enqueue_fonts() {
+    wp_enqueue_style('Montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet', array(), null);
+
+    wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet', array(), null);
+}
+add_action('wp_enqueue_scripts', 'redtattoo_theme_enqueue_fonts');
+
+
+
+function enqueue_testimonials_scripts() {
+
+    wp_enqueue_script('testimonials-script', get_template_directory_uri() . '/js/testimonials.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_testimonials_scripts');
+
+
+function enqueue_booking_script() {
+    // افزودن فایل booking.js
+    wp_enqueue_script(
+        'booking-script', // نام یکتا برای اسکریپت
+        get_template_directory_uri() . '/js/booking.js', // مسیر فایل booking.js
+        array(), // وابستگی‌ها (مثلاً jQuery، در اینجا خالی است)
+        null, // نسخه (null برای نسخه‌بندی خودکار)
+        true // بارگذاری در footer
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_booking_script');
+
+
+
+add_filter('use_block_editor_for_post', 'disable_gutenberg_for_front_page', 10, 2);
+
+function disable_gutenberg_for_front_page($use_block_editor, $post) {
+  
+    if ($post->ID == 13) {
+        return false; 
+    }
+
+    return $use_block_editor; 
 }
 
 
@@ -328,7 +391,7 @@ function readtattoo_testimonial_cpt() {
         'label'                 => __( 'Testimonial', 'text_domain' ),
         'description'           => __( 'Testimonials for Redtattoo theme', 'text_domain' ),
         'labels'                => $labels,
-		'supports'              => array('thumbnail' ),
+		'supports'              => array('title', 'thumbnail'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -349,6 +412,3 @@ function readtattoo_testimonial_cpt() {
 
 }
 add_action( 'init', 'readtattoo_testimonial_cpt', 0 );
-
-
-

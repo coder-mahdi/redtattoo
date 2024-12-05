@@ -10,5 +10,16 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+
+body {
+    font-family: 'Roboto', sans-serif;
+	color: white;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; 
+}
+
+
 @import "headings";
 @import "copy";

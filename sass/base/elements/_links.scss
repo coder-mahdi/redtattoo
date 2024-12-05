@@ -1,8 +1,14 @@
 a {
-	color: $color__link;
+
+
+
+    text-decoration: none; 
+	
+	color: white;
+	// color: $color__link;
 
 	&:visited {
-		color: $color__link-visited;
+		// color: $color__link-visited;
 	}
 
 	&:hover,
@@ -19,4 +25,9 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+
+a:hover{
+		color: #B22222;
 }
