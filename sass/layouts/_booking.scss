@@ -57,7 +57,7 @@ h2.text.salon-step-title {
 }
 
 .sln-btn button,
-btn--borderonly
+.btn--borderonly
  {
     border-radius: 5px  !important;
     padding: 10px 20px  !important;
@@ -85,4 +85,55 @@ btn--borderonly
 
 #sln-salon #sln_timepicker_viewdate{
     color: white;
+}
+
+.sln-progbar__text{
+    color: white !important;
+}
+
+#sln-salon .sln-progbar__wrapper{
+    
+    margin-right: 3rem !important;
+        margin-left: 3rem !important;
+}
+
+.editable{
+    margin-left:3rem !important ;
+}
+
+.row .sln-box__bottombar .sln-box__bottombar--attendant{
+    margin-right: 3rem !important;
+
+}
+
+.prev, .next, .num,
+.numbg, .day .active, .day .disabled {
+    color: black !important;
+}
+
+#sln-salon #sln_timepicker_viewdate{
+    color: white !important;
+}
+
+.datetimepicker-minutes{
+    background-color: rgb(223 131 131) !important;
+}
+
+@media only screen and (max-width: 599px) {
+    #sln-salon .datetimepicker.sln-datetimepicker,
+    .sln-box__bottombar, #sln-salon .sln-box__bottombar,
+    #sln-salon .datetimepicker.sln-datetimepicker{
+        background-color: unset !important;
+
+    }
+}
+
+.sln-data-desc,
+.sln-thankyou__content .sln-list,
+#sln-salon .sln-summary .sln-data-desc .label{
+    color: white !important;
+}
+
+.sln-thankyou__content .sln-list{
+    color: white !important;
 }
