@@ -43,3 +43,46 @@ h2.text.salon-step-title {
     padding-left: 0;
     padding-right: 0;
 }
+
+#sln-salon #sln-salon__content{
+    background-color: #B22222 !important;
+    padding: 0.1rem !important;
+}
+
+#sln-salon h2.sln-salon-title{
+    color: white;
+}
+.sln-list .sln-list__item:not(.sln-list--400) .sln-list__item__content .sln-list__item__name{
+    color: white !important;
+}
+
+.sln-btn button,
+btn--borderonly
+ {
+    border-radius: 5px  !important;
+    padding: 10px 20px  !important;
+    margin-right: 5rem  !important;
+    background-color: #B22222  !important;
+    transition: background-color 0.3s ease color 0.3s ease  !important;
+    a {
+        text-decoration: none  !important;
+        color: white  !important;
+    }
+}
+
+
+
+.sln-list, #sln-salon .sln-list{
+    margin: 2rem !important;
+}
+
+
+#sln-salon #sln_date .sln-salon-bs-wrap .table-condensed, .sln_timepicker, .started, .is_scrollable{
+
+    background-color: rgb(223 131 131) !important;
+
+}
+
+#sln-salon #sln_timepicker_viewdate{
+    color: white;
+}
