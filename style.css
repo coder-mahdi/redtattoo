@@ -953,7 +953,7 @@ textarea {
 
 .team-members-section {
 	gap: 3rem;
-	margin-bottom: 10rem;
+	margin-bottom: 2rem;
 	justify-content: center;
 	grid-template-columns: minmax(200px, 210px);
 	display: grid;
@@ -962,7 +962,7 @@ textarea {
 @media screen and (min-width: 769px) {
 	.team-members-section {
 		grid-template-columns: minmax(200px, 210px) minmax(200px, 210px);
-		grid-template-rows: auto minmax(300px, 350px);
+		grid-template-rows: auto auto;
 	}
 }
 
