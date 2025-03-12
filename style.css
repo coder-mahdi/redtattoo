@@ -973,6 +973,7 @@ textarea {
 }
 .team-member p {
 	margin-top: -1rem;
+	text-align: center;
 }
 .team-member img {
 	width: 100%;
