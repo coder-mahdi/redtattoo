@@ -1555,4 +1555,23 @@ h2.text.salon-step-title {
 		grid-template-columns: auto 20% 20% !important;
 	}
 }
+.sln-box__bottombar, #sln-salon .sln-box__bottombar {
+	font-size: inherit !important;
+}
+
+.sln-box--formactions, #sln-salon .sln-box--formactions {
+	display: block !important;
+}
+
+#sln-salon .sln-summary .sln-summary__tabs__pane .sln-summary__tabs__pane__content {
+	display: block !important;
+}
+
+.sln-box--formactions.sln-box--formactions--summary .sln-btn--nextstep, #sln-salon .sln-box--formactions.sln-box--formactions--summary .sln-btn--nextstep {
+	font-size: 12.8px !important;
+}
+
+.sln-btn--borderonly, #sln-salon .sln-btn--borderonly, .sln-bootstrap .sln-btn--borderonly, .sln-btn.sln-btn--borderonly, #sln-salon.sln-loginform:not(.sln-customcolors) #loginform .sln-btn--borderonly#wp-submit, .sln-bootstrap .sln-btn.sln-btn--borderonly, a.sln-btn.sln-btn--borderonly, .sln-bootstrap a.sln-btn.sln-btn--borderonly, #sln-salon .sln-btn.sln-btn--borderonly, #sln-salon .sln-bootstrap .sln-btn.sln-btn--borderonly, #sln-salon a.sln-btn.sln-btn--borderonly, #sln-salon .sln-bootstrap a.sln-btn.sln-btn--borderonly {
+	font-size: 12.8px !important;
+}
 /*# sourceMappingURL=sass/style.css.map */
