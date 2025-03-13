@@ -197,4 +197,20 @@ h2.text.salon-step-title {
 
 .sln-btn--borderonly, #sln-salon .sln-btn--borderonly, .sln-bootstrap .sln-btn--borderonly, .sln-btn.sln-btn--borderonly, #sln-salon.sln-loginform:not(.sln-customcolors) #loginform .sln-btn--borderonly#wp-submit, .sln-bootstrap .sln-btn.sln-btn--borderonly, a.sln-btn.sln-btn--borderonly, .sln-bootstrap a.sln-btn.sln-btn--borderonly, #sln-salon .sln-btn.sln-btn--borderonly, #sln-salon .sln-bootstrap .sln-btn.sln-btn--borderonly, #sln-salon a.sln-btn.sln-btn--borderonly, #sln-salon .sln-bootstrap a.sln-btn.sln-btn--borderonly {
     font-size: 12.8px !important;
+    border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+    #sln-salon .col-md-12, #sln-salon--admin .col-md-12, .sln-salon-bs-wrap .col-md-12, .sln-calendar--wrapper .col-md-12 {
+        display: none !important;
+    }
+}
+
+#sln-salon .sln-summary .sln-summary__reminder h3,h5 {
+    color: white !important;
+}
+
+#sln-salon .sln-summary .sln-summary__terms h5{
+    color: #536A77 !important;
+
 }
