@@ -206,7 +206,7 @@
 
 .team-members-section{
     gap: 3rem;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
     justify-content: center;
     grid-template-columns: minmax(200px, 210px);
     display: grid;
@@ -214,7 +214,7 @@
 
     @media screen and (min-width: 769px){
         grid-template-columns: minmax(200px, 210px) minmax(200px, 210px);
-        grid-template-rows: auto minmax(300px, 350px);
+        grid-template-rows: auto auto;
     }
 
 
@@ -226,6 +226,7 @@
         align-items: center;
         p{
             margin-top: -1rem;
+            text-align: center;
         }
 
         img {
@@ -329,6 +330,7 @@ padding-bottom: 2rem;
 }
 
 
+//--------------------------booking section
 
 .booking-bar {
     display: none;
