@@ -432,3 +432,9 @@ function custom_gallery_post_type() {
     );
 }
 add_action('init', 'custom_gallery_post_type');
+
+
+function remove_editor_from_gallery() {
+    remove_post_type_support('gallery', 'editor'); 
+}
+add_action('init', 'remove_editor_from_gallery');
