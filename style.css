@@ -1588,4 +1588,8 @@ h2.text.salon-step-title {
 #sln-salon .sln-summary .sln-summary__terms h5 {
 	color: #536A77 !important;
 }
+
+h2.salon-step-title {
+	color: white !important;
+}
 /*# sourceMappingURL=sass/style.css.map */
