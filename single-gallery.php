@@ -15,6 +15,7 @@ get_header();
             
             <header class="entry-header">
                 <h1 class="entry-title"><?php the_title(); ?></h1>
+				<h2 class="page-title">Tattoo Artworks</h2>
             </header>
 
             <div class="gallery-images">
