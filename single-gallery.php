@@ -34,7 +34,7 @@ get_header();
                 <?php endif; ?>
             </div>
 
-			<a href="<?php echo site_url('/redtattoo.com'); ?>" class="back-button">‌Back To Home</a>
+			<a href="<?php echo site_url('https://redtattoo.ca/'); ?>" class="back-button">‌Back To Home</a>
 			<?php
 			 echo '<div class="booking-bar">';
              echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';
