@@ -1,8 +1,7 @@
 .back-button{
-        position: absolute;
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
+        position: relative;
+        margin: 1rem auto;
+        width: 200px;
         z-index: 2; 
         color: white;
         text-align: center;
