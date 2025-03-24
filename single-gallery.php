@@ -27,9 +27,6 @@ get_header();
                             <div class="gallery-item">
                                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                             </div>
-
-							<a href="<?php echo site_url('/redtattoo.com'); ?>" class="back-button">‌Back To Home page</a>
-
                         <?php endforeach; ?>
                     </div>
                 <?php else: ?>
@@ -37,7 +34,7 @@ get_header();
                 <?php endif; ?>
             </div>
 
-
+			<a href="<?php echo site_url('/redtattoo.com'); ?>" class="back-button">‌Back To Home page</a>
 			<?php
 			 echo '<div class="booking-bar">';
              echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';
