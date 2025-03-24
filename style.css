@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: redtattoo theme
 Theme URI: http://underscores.me/
@@ -1113,6 +1114,79 @@ textarea {
 	background-color: white;
 }
 
+.gallery-images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.5rem;
+	padding: 2rem 0;
+}
+
+.gallery-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1rem;
+	width: calc(33.333% - 1rem); /* سه ستونه کردن */
+	width: 300px; /* اندازه ثابت برای عرض */
+	height: 300px;
+}
+
+.gallery-item img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.3s ease;
+	display: block;
+	width: 100%;
+	height: 450px; /* اندازه ثابت برای ارتفاع */
+	-o-object-fit: cover;
+	   object-fit: cover; /* به طور خودکار تصویر را به اندازه درست می‌آورد */
+	border-radius: 1rem;
+	transition: transform 0.3s ease;
+}
+
+.gallery-item .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+	transform: scale(1.05); /* بزرگ کردن عکس هنگام هاور */
+}
+
+.gallery-item:hover .overlay {
+	opacity: 1; /* نمایش افکت لایه روی عکس هنگام هاور */
+}
+
+/* Mobile view (Small screens) */
+@media screen and (max-width: 768px) {
+	.gallery-item {
+		width: calc(50% - 1rem); /* دو ستونه برای نمایش در موبایل */
+	}
+}
+/* Tablet view */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.gallery-item {
+		width: calc(33.333% - 1rem); /* سه ستونه برای تبلت */
+	}
+}
+/* Desktop view */
+@media screen and (min-width: 1024px) {
+	.gallery-item {
+		width: calc(33.333% - 1rem); /* سه ستونه برای دسکتاپ */
+		height: 450px;
+	}
+	img {
+		width: 100%;
+		height: 450px;
+	}
+}
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
