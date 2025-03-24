@@ -215,13 +215,13 @@ add_action('wp_enqueue_scripts', 'enqueue_testimonials_scripts');
 
 
 function enqueue_booking_script() {
-    // افزودن فایل booking.js
+
     wp_enqueue_script(
-        'booking-script', // نام یکتا برای اسکریپت
-        get_template_directory_uri() . '/js/booking.js', // مسیر فایل booking.js
-        array(), // وابستگی‌ها (مثلاً jQuery، در اینجا خالی است)
-        null, // نسخه (null برای نسخه‌بندی خودکار)
-        true // بارگذاری در footer
+        'booking-script', 
+        get_template_directory_uri() . '/js/booking.js', 
+        array(), 
+        null, 
+        true 
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_booking_script');
@@ -412,3 +412,29 @@ function readtattoo_testimonial_cpt() {
 
 }
 add_action( 'init', 'readtattoo_testimonial_cpt', 0 );
+
+
+
+//---- Add Gallery CPT
+
+function custom_gallery_post_type() {
+    register_post_type('gallery',
+        array(
+            'labels'      => array(
+                'name'          => __('Galleries'),
+                'singular_name' => __('Gallery')
+            ),
+            'public'      => true,
+            'has_archive' => true,
+            'supports'    => array('title', 'editor', 'thumbnail'),
+            'rewrite'     => array('slug' => 'gallery'),
+        )
+    );
+}
+add_action('init', 'custom_gallery_post_type');
+
+
+function remove_editor_from_gallery() {
+    remove_post_type_support('gallery', 'editor'); 
+}
+add_action('init', 'remove_editor_from_gallery');

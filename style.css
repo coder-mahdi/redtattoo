@@ -1094,6 +1094,26 @@ textarea {
 	color: #B22222;
 }
 
+.back-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	color: white;
+	text-align: center;
+	display: inline-block;
+	padding: 1rem 2rem;
+	background-color: #8b0000;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 1rem;
+	transition: background-color 0.3s ease;
+}
+.back-button:hover {
+	background-color: white;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1587,5 +1607,9 @@ h2.text.salon-step-title {
 
 #sln-salon .sln-summary .sln-summary__terms h5 {
 	color: #536A77 !important;
+}
+
+h2.salon-step-title {
+	color: white !important;
 }
 /*# sourceMappingURL=sass/style.css.map */
