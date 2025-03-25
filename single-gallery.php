@@ -46,7 +46,7 @@ get_header();
 			<a href="<?php echo site_url(); ?>" class="back-button">‌Back To Home</a>
 			<?php
 			 echo '<div class="booking-bar">';
-             echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';
+             echo '<a href="https://redtattoo.ca/booking/ class="booking-link">Book Now</a>';
              echo '</div>'
              ?>
 
