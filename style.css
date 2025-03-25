@@ -1113,6 +1113,10 @@ textarea {
 	background-color: white;
 }
 
+.gallery-images {
+	margin-top: 5rem;
+}
+
 .gallery-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -1141,8 +1145,8 @@ textarea {
 @media screen and (min-width: 1024px) {
 	.gallery-item {
 		flex: 1 1 100%;
-		max-width: 15%;
-		height: 500px;
+		max-width: 30%;
+		height: 600px;
 	}
 }
 
@@ -1152,6 +1156,22 @@ textarea {
 	-o-object-fit: cover;
 	   object-fit: cover;
 	border-radius: 1rem;
+}
+
+.entry-header .page-title {
+	top: 20%;
+	font-size: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+	.entry-header .page-title {
+		font-size: 1.9rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.entry-header .page-title {
+		top: 23%;
+		font-size: 2rem;
+	}
 }
 
 /*--------------------------------------------------------------

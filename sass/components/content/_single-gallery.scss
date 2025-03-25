@@ -23,6 +23,10 @@
 
 //// gallery image 
 
+.gallery-images {
+    margin-top: 5rem;
+}
+
 .gallery-grid {
     display: flex;
     flex-wrap: wrap;
@@ -49,12 +53,9 @@
 
     @media screen and (min-width: 1024px) {
         flex: 1 1 100%;
-        max-width: 15%;
-        height: 500px;
+        max-width: 30%;
+        height: 600px;
     }
-
-
-
 }
 
 .gallery-item img {
@@ -65,3 +66,16 @@
 }
 
 
+.entry-header .page-title {
+    top: 20%;
+    font-size: 1.4rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.9rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+        top: 23%;
+        font-size: 2rem;
+    }
+}
