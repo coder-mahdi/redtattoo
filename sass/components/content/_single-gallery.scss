@@ -75,7 +75,12 @@
     }
 
     @media screen and (min-width: 1024px) {
-        top: 23%;
+        top: 25%;
         font-size: 2rem;
     }
+}
+
+.gallery-item:active img,
+.gallery-item:hover img {
+ transform: scale(1.05);
 }
