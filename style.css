@@ -737,7 +737,7 @@ textarea {
 /* Galleries
 --------------------------------------------- */
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: -0.5em;
 	display: grid;
 	grid-gap: 1.5em;
 }
