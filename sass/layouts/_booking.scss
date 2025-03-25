@@ -218,3 +218,21 @@ h2.text.salon-step-title {
 h2.salon-step-title {
     color: white !important;
 }
+
+
+//
+#sln-salon #sln-salon__content {
+    border-radius: -0rem !important;
+}
+
+#sln-salon.sln-salon--m {
+    padding: 0em !important;
+}
+
+#sln-salon {
+    padding: 0rem !important;
+}
+
+.sln-list, #sln-salon .sln-list {
+    background-color: unset !important; 
+}
