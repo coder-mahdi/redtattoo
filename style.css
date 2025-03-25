@@ -990,6 +990,11 @@ textarea {
 	   object-fit: cover;
 }
 
+.team-member:active img,
+.team-member:hover img {
+	transform: scale(1.05);
+}
+
 .testimonials-section {
 	display: flex;
 	flex-direction: column;
