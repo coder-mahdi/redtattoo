@@ -1,0 +1,393 @@
+.site-main{
+    background-color: black;
+}
+
+.hero-image-slider {
+    position: relative; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    padding-top: 1rem;
+}
+
+.hero-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; 
+}
+
+
+.hero-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem; 
+
+    
+        img {
+            display: block;
+            height: 13rem;
+            width: 10rem;
+            transition: transform 0.3s ease;
+        }
+    
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease;
+            opacity: 1; 
+        }
+    
+        &:hover {
+            img {
+                transform: scale(1.05); 
+            }
+            
+            .overlay {
+                opacity: 0; 
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 769px) {
+        
+        .hero-image-wrapper:nth-child(n+7) {
+        display: none; 
+    }
+
+    }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .hero-image {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem; 
+    }
+    .hero-image-wrapper:nth-child(n+13) {
+        display: none;
+    }
+    }
+
+
+
+@media screen and (min-width: 1024px) {
+
+    .hero-image {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 1.5rem; 
+    }
+    .hero-image-wrapper:nth-child(n+25) {
+        display: none;
+    }
+    .hero-image-wrapper img {
+        height: 15.5rem; 
+        width: 11rem;  
+    }
+    }
+
+
+////----------------------- page title
+
+.page-title,
+.booking-button {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    color: white;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem; 
+    margin-top: -3rem;
+}
+
+.booking-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darkred;
+    }
+}
+
+
+.schedule-box{
+    position: absolute;
+    padding: 1rem;
+    top: 74.5%; 
+    left: 8rem; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    color: white;
+    background-color:rgba(33, 33, 33, 0.8);
+    font-size: 0.75rem;
+
+    @media screen and (min-width: 769px) {
+        font-size: 1rem;
+        left: 9.5rem; 
+
+    }
+
+
+}
+
+
+////---------about us 
+
+.about-us-section{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    position: relative;
+
+
+    img{
+        border-radius: 1rem;
+    }
+
+    p{
+        text-align: justify;
+      
+    }
+
+    @media screen and (min-width: 1100px){
+        flex-wrap: nowrap;
+        margin-left: 10rem;
+        margin-right: 7rem;
+    }
+
+}
+
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%;
+    height: 0; 
+    border-top: 0.1rem solid #B22222; 
+}
+
+.about-us-wrapper{
+    margin-left: 2rem;
+    
+}
+
+
+//----------- team member section
+
+.team-member-wrrapper{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.team-members-section{
+    gap: 3rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    grid-template-columns: minmax(200px, 210px);
+    display: grid;
+    justify-items: center;
+
+    @media screen and (min-width: 769px){
+        grid-template-columns: minmax(200px, 210px) minmax(200px, 210px);
+        grid-template-rows: auto auto;
+    }
+
+
+}
+
+.team-member{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            margin-top: -1rem;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height:100%; 
+            object-fit: cover; 
+            border-radius: 10px; 
+        }
+
+        .img-wrapper{
+            width: 210px; 
+            height: 210px;
+            overflow: hidden; 
+            object-fit: cover;
+        }
+        
+        
+}
+
+ .team-member:active img,
+ .team-member:hover img {
+ transform: scale(1.05);
+}
+
+
+
+
+//-------testimonials
+
+.testimonials-section{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+padding-top: 2rem;
+padding-bottom: 2rem;
+
+
+    img{
+        width: 20rem;
+        height: 15rem;
+        object-fit: cover;
+    
+    }
+}
+
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%;
+    height: 0; 
+    border-top: 0.1rem solid #B22222; 
+}
+
+
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.testimonial-item.active {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.testimonials-section:focus-within .testimonial-item {
+    outline: none;
+}
+
+
+//--------------------------booking section
+
+.booking-bar {
+    display: none;
+    width: 100%; 
+    background-color: #B22222; 
+    padding: 15px 0; 
+    text-align: center; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999; 
+    @media screen and (min-width: 769px){
+        display: block;
+
+    }
+}
+
+.booking-link {
+    color: white;
+    font-size: 18px;
+    font-weight: bold; 
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.booking-link:hover {
+    background-color: white; 
+    color: #B22222;
+}
+
+
+
+//
+
+.gallery-button {
+    position: relative;
+    margin: 1rem auto;
+    width: 120px;
+    z-index: 2; 
+    color: white;
+    text-align: center;
+
+
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background-color: #8b0000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: -1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: white;
+    }
+}

@@ -1,0 +1,138 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 1rem;
+    bottom: 0;
+    position: fixed; 
+    width: 100%;
+    justify-content: space-between;
+    z-index: 10; 
+}
+
+.menu-toggle {
+    color: white;
+    background-color: inherit;
+    border: none; 
+    cursor: pointer;
+
+    svg {
+        fill: currentColor; 
+    }
+
+    display: block; 
+    cursor: pointer;
+    border: none;
+    width: 4rem; 
+    height: 4rem;
+    position: fixed; 
+    bottom: 1rem; 
+    right: 1rem; 
+    margin-right: 1rem;
+    z-index: 15; 
+}
+
+.menu-header-container{
+    display: none;
+}
+
+
+.main-navigation.toggled .menu-header-container {
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem;
+    position: fixed; 
+    bottom: 5rem;
+    right: 0; 
+    padding-top: 1rem;
+    padding-right: 4rem;
+    background-color: black; 
+    border-radius: 5px; 
+    z-index: 14; 
+    ul{
+        list-style: none;
+    }
+    li{
+        margin-top: 1rem;
+
+    }
+}
+
+
+.booking-botton{
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 5rem;
+    background-color: #B22222;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.booking-botton:hover{
+    background-color: #CCCCCC;
+    color: #B22222;
+}
+
+
+
+.icon-open {
+    display: block;
+}
+
+.main-navigation.toggled .icon-open {
+    display: none; 
+}
+
+.icon-close {
+    display: none;
+}
+
+.main-navigation.toggled .icon-close {
+    display: block; 
+}
+
+
+.main-navigation.toggled .menu-toggle svg.icon-open {
+    transform: rotate(180deg); 
+}
+
+/* Small menu */
+@media screen and (min-width: 37.5em) {
+
+    .site-header{
+        position: static; 
+        top: 20px;
+        display: flex;
+        align-items: flex-end;
+        bottom: auto;
+    }
+
+    .main-navigation{
+        display: flex;
+        margin-right: 2rem;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: none; 
+    }
+
+    .main-navigation ul {
+        display: flex; 
+        list-style: none;
+    }
+
+    .menu-header-container {
+        display: flex; 
+    }
+
+     .menu-header-container ul {
+        display: flex; 
+        gap: 1rem; 
+    }
+
+    .booking-botton {
+        margin-right: -2rem;
+    }
+
+ 
+}
