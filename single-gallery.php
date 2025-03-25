@@ -43,15 +43,15 @@ get_header();
 
             </div>
 
-			<a href="<?php echo site_url('https://redtattoo.ca/'); ?>" class="back-button">‌Back To Home</a>
+			<a href="<?php echo site_url(); ?>" class="back-button">‌Back To Home</a>
 			<?php
 			 echo '<div class="booking-bar">';
              echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';
-             echo '</div>';
-             ?>;
+             echo '</div>'
+             ?>
 
         </article>
-    <?php endwhile; ?>;
+    <?php endwhile; ?>
 </main>
 
 <?php
