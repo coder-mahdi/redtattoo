@@ -19,22 +19,31 @@ get_header();
             </header>
 
             <div class="gallery-images">
-                <?php 
-                $gallery_images = get_field('gallery-images'); 
-                if( $gallery_images ): ?>
-                    <div class="gallery-grid">
-                        <?php foreach( $gallery_images as $image ): ?>
-                            <div class="gallery-item">
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php else: ?>
-                    <p>ُThis gallery does not have any photo</p>
-                <?php endif; ?>
+            <?php $gallery_images = get_field('gallery-images'); 
+                 if ($gallery_images): 
+                    usort($gallery_images, function ($a, $b) {
+                     
+                        $date_a = isset($a['upload_date']) ? strtotime($a['upload_date']) : strtotime($a['date']); 
+                        $date_b = isset($b['upload_date']) ? strtotime($b['upload_date']) : strtotime($b['date']);
+                        
+                        return $date_b - $date_a; 
+                    });
+            ?>
+    <div class="gallery-grid">
+        <?php foreach ($gallery_images as $index => $image): ?>
+            <?php if ($index >= 20) break;?>
+            <div class="gallery-item">
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else: ?>
+    <p>This gallery does not have any photo</p>
+<?php endif; ?>
+
             </div>
 
-			<a href="<?php echo site_url('/redtattoo.com'); ?>" class="back-button">‌Back To Home page</a>
+			<a href="<?php echo site_url('https://redtattoo.ca/'); ?>" class="back-button">‌Back To Home</a>
 			<?php
 			 echo '<div class="booking-bar">';
              echo '<a href="http://localhost:8888/redtattoo/booking/" class="booking-link">Book Now</a>';

@@ -438,3 +438,18 @@ function remove_editor_from_gallery() {
     remove_post_type_support('gallery', 'editor'); 
 }
 add_action('init', 'remove_editor_from_gallery');
+
+
+// ----- gallery action time
+function redtattoo_enqueue_scripts() {
+    wp_enqueue_script(
+        'gallery-js', 
+        get_template_directory_uri() . '/js/gallery.js', 
+        array(),
+        null, 
+        true 
+    );
+}
+add_action('wp_enqueue_scripts', 'redtattoo_enqueue_scripts');
+
+

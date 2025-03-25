@@ -142,6 +142,13 @@ if ( $team_members->have_posts() ) :
         the_content();
         echo '</p>';
 
+        // Generate Gallery URL for each team member dynamically
+        $team_member_name = get_the_title(); // Getting team member name (could be replaced with custom field if needed)
+        $gallery_url = site_url('/gallery/' . sanitize_title_with_dashes($team_member_name));
+
+        // Display the gallery button if the team member has a gallery
+        echo '<a href="' . esc_url($gallery_url) . '" class="gallery-button">Gallery</a>';
+
         echo '</div>'; // Close team-member
 
     endwhile;
@@ -155,8 +162,6 @@ endif;
 
 echo '</div>'; // Close team-member-wrrapper
 
-
-		
 		
 
         // Services: CPT with Custom Taxonomy and ACF
