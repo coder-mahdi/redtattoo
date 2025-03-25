@@ -365,3 +365,27 @@ padding-bottom: 2rem;
 }
 
 
+
+//
+
+.gallery-button {
+    position: relative;
+    margin: 1rem auto;
+    width: 120px;
+    z-index: 2; 
+    color: white;
+    text-align: center;
+
+
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background-color: #8b0000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: -1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: white;
+    }
+}
